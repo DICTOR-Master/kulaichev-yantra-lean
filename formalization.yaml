@@ -51,7 +51,7 @@ sources:
       - "DICTO"
     type: "original-proof"
     location: "this repository (README.md)"
-    relationship: "formalizes"
+    relationship: "other"
     note: "First proof of uniqueness; the Lean proof follows the box certificate, not the degree-1744 elimination."
     author_endorsement: "participated"
   - title: "Sriyantra and its Mathematical Properties"
