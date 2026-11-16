@@ -40,19 +40,22 @@ sources:
     id: "doi:10.5281/zenodo.24052633"
     type: "paper"
     location: "https://doi.org/10.5281/zenodo.24052633 (concept DOI, all versions)"
-    relationship: "background"
+    relationship: "formalizes"
     note: >-
-      The conditions (Theorem 1's admissibility) and the yantra of Theorem 10
-      are formalised; the uniqueness is the new result below.
+      Formalised from this paper: the conditions (Theorem 1's admissibility) and
+      the yantra of Theorem 10 (existence). The uniqueness proof is new (next entry).
     license: "CC-BY-SA-4.0"
     author_endorsement: "participated"
   - title: "Uniqueness of Kulaichev's Sri Yantra (DICTO's study 2026-11-15: elimination census and box certificate)"
     authors:
       - "DICTO"
-    type: "original-proof"
+    type: "other"
     location: "this repository (README.md)"
     relationship: "other"
-    note: "First proof of uniqueness; the Lean proof follows the box certificate, not the degree-1744 elimination."
+    note: >-
+      New in this repository: the first proof that the yantra is unique, which
+      answers Kulaichev's 1984 question. The Lean proof follows the box
+      certificate, not the degree-1744 elimination.
     author_endorsement: "participated"
   - title: "Sriyantra and its Mathematical Properties"
     authors:
@@ -153,7 +156,7 @@ sources:
   - title: "Addition to Sri Yantra and its mathematical properties"
     authors:
       - "A. P. Kulaichev"
-    type: "note"
+    type: "other"
     location: "English translation circulated online (Chiodo 2021, p. 387); no open copy found"
     relationship: "background"
     note: >-
