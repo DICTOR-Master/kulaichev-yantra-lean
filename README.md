@@ -14,7 +14,8 @@ on the correct side of its base, and every corner in the disc. Then **exactly on
 lies in the proved interval [0.7504382776…, 0.7504387544…] (width 2⁻²¹). The value 0.75043851602221402440… given in
 #103 (Theorem 10) was computed outside Lean; the Lean proof certifies only the interval, which contains it.
 
-Kulaichev asked this question in 1984 (*Indian Journal of History of Science* 19.3, pp. 284–285). A. Chiodo
+Kulaichev asked the uniqueness question in 1984 (without the admissibility of #103; the result settles it for
+admissible figures) (*Indian Journal of History of Science* 19.3, pp. 284–285). A. Chiodo
 (*Comptes Rendus Mathématique* 359, 2021, pp. 381, 387) described it as still open.
 
 - `Challenge.lean`: the statement, with every proof `sorry`.

@@ -25,12 +25,15 @@ Add Kulaichev's four conditions:
 
 Finally, ask for admissibility as in DICTO's #103, Theorem 1: the bases are strictly ordered, every half-width is positive,
 every apex lies on the correct side of its base, and every corner lies in the closed disc. Then exactly one such figure
-exists. A. P. Kulaichev asked this question in 1984 (*IJHS* 19.3, p. 285: system 2 "may or may not possess other real
+exists. This settles, for admissible figures, the uniqueness question A. P. Kulaichev asked in 1984 (he asked it without
+the admissibility of #103) (*IJHS* 19.3, p. 285: system 2 "may or may not possess other real
 roots"; p. 284: "at least, one real solution" is presumed). Chiodo (*C. R. Math.* 359, 2021) called it still open
 ("toujours ouverte", p. 381; in English, p. 387: Kulaichev "argues that the answer is out of reach").
 
-**Scope.** The same equations have one other real root in the range that admissibility needs, at `w7/b7 = 0.66866…`.
-It is not admissible (its bases are out of order and two half-widths are negative), so it is not a yantra.
+**Scope (not formalised).** DICTO's study, outside Lean, finds one other real solution of the same equations, at
+`w7/b7 = 0.66866…`; it is not admissible (its bases are out of order and two half-widths are negative), so it is not a
+yantra. Lean proves only uniqueness among admissible figures. The marmas and corner touches are stated on the full lines
+through the legs and bases, not on the segments.
 
 **Frame.** The axis is the line `x = 0`, and the depth `d` is measured downwards from the top point of the circle, so the
 circle is `x² + d² - d = 0`. Triangle `t(i+1)` has base depth `b i`, base half-width `w i` and apex `(0, a i)`, for
@@ -74,7 +77,9 @@ def OnCircle (x d : ℝ) : Prop := x ^ 2 + d ^ 2 - d = 0
 /-- a point lies in the closed disc -/
 def InDisc (x d : ℝ) : Prop := x ^ 2 + d ^ 2 - d ≤ 0
 
-/-- **Huet's conditions** in Chiodo's form (indices are `i - 1` for `ti`) -/
+/-- **Huet's conditions** in Chiodo's form (indices are `i - 1` for `ti`): (i) the great triangles t3 and t7 are
+inscribed; (ii) seven apexes lie on bases; (iii) nine marma concurrencies and three corner touches (18 marmas and 6 corner
+touches with their mirror images), each as three lines (two full leg lines and one full base line) meeting in a point. -/
 def Yantra.Huet (y : Yantra) : Prop :=
   -- (i) the great triangles t3 and t7 are inscribed: apexes at the bottom and top points, corners on the circle
   y.a 2 = 1 ∧ y.a 6 = 0 ∧ OnCircle (y.w 2) (y.b 2) ∧ OnCircle (y.w 6) (y.b 6) ∧
@@ -91,7 +96,9 @@ def Yantra.Huet (y : Yantra) : Prop :=
   Concurrent (y.leg 3) (y.base 3) (y.leg 7) ∧ Concurrent (y.leg 4) (y.base 4) (y.leg 5) ∧
   Concurrent (y.leg 1) (y.base 5) (y.leg 5)
 
-/-- **Kulaichev's conditions** (a)–(d) -/
+/-- **Kulaichev's conditions** (a)–(d): (a) t3 and t7 are congruent; (b) the corners of t1 lie on the circle; (c) the
+corners of t9 lie on the circle; (d) the centre `(0, 1/2)` is the incentre of the triangle bounded by the legs of t1 and
+the base of t5. -/
 def Yantra.Kulaichev (y : Yantra) : Prop :=
   -- (a) t3 and t7 are congruent: equal heights and equal base half-widths
   (y.a 2 - y.b 2 = y.b 6 - y.a 6 ∧ y.w 2 = y.w 6) ∧
