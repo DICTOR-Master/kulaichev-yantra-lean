@@ -115,7 +115,9 @@ def Yantra.Admissible (y : Yantra) : Prop :=
 theorem kulaichev_unique : ∃! y : Yantra, y.Huet ∧ y.Kulaichev ∧ y.Admissible := by
   sorry
 
-/-- The unique yantra has slope `w7 / b7 = 0.75043851602221402440…` (#103, Theorem 10). -/
+/-- The slope `w7 / b7` of the unique yantra lies in the proved interval `[0.7504382776…, 0.7504387544…]` (width `2⁻²¹`).
+#103 (Theorem 10) gives the slope as `0.75043851602221402440…`, a root of its degree-348 polynomial computed outside
+Lean; this theorem certifies only the interval, which contains that value. -/
 theorem kulaichev_slope (y : Yantra) (h : y.Huet ∧ y.Kulaichev ∧ y.Admissible) :
     (3379673547380287 : ℝ) / 4503599627370496 ≤ y.w 6 / y.b 6 ∧
       y.w 6 / y.b 6 ≤ (3379675694863935 : ℝ) / 4503599627370496 := by
