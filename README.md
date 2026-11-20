@@ -56,9 +56,64 @@ study's `scripts/c14_palomar_entry.py`.
 `scripts/check-lean-sources.py` and `scripts/verify-comparator.sh` come from Palomar's entry template
 (PalomarRegistry). They check the source rules and run `lake comparator` the way Palomar does.
 
-## Licence
+## How to cite and reuse
 
-Apache-2.0 (see `LICENSE`). Copyright 2026 DICTO.
+### How to cite
+
+- **The paper.** DICTO, *The DICTO Yantra: Unique and Traditional, Exact but Not Constructible* (paper #103), Zenodo,
+  2026. DICTO DOI: [10.5281/zenodo.24052633](https://doi.org/10.5281/zenodo.24052633) (all versions).
+- **The Palomar entry.** PALOMAR-2026-11-17-000006, version 1:
+  https://palomar-registry.org/entry?id=PALOMAR-2026-11-17-000006&version=1
+- **The repository commit.** github.com/DICTOR-Master/kulaichev-yantra-lean, commit
+  `c167cf4ed81f9e7df921ed7ce0113db874b1391b` (the commit registered on Palomar). Later commits change only metadata and
+  documentation, not the Lean files.
+
+`CITATION.cff` holds the same data in machine-readable form (GitHub shows it under "Cite this repository").
+
+### What the library offers
+
+The main theorems (namespace `KulaichevYantra` in `Challenge.lean` and `Solution.lean`; the same statements as
+`YantraCert.Y.kulaichev_unique` and `YantraCert.Y.kulaichev_slope` in `YantraCert/Main.lean`):
+
+- `kulaichev_unique`: `∃! y : Yantra, y.Huet ∧ y.Kulaichev ∧ y.Admissible`;
+- `kulaichev_slope`: for that figure, the slope `w 6 / b 6` (`w7/b7` above) lies in [3379673547380287 / 2⁵², 3379675694863935 / 2⁵²].
+
+Definitions (`YantraCert/Defs.lean`, namespace `YantraCert.Y`): `Yantra` (nine triangles by base depth, half-width and
+apex depth), `lineThrough`, `Concurrent`, `OnCircle`, `InDisc`, `Yantra.Huet`, `Yantra.Kulaichev`, `Yantra.Admissible`.
+
+Parts that do not depend on the yantra (namespace `YantraCert`):
+
+- `YantraCert/Krawczyk.lean`: Krawczyk's test in slope form for `F : ι → (ι → ℝ) → ℝ` on a box `InBox c r`, any finite
+  index type: `krawczyk_unique` (at most one zero in the box) and `krawczyk_exists` (a zero exists, by Mathlib's
+  `ContractingWith.fixedPoint`).
+- `YantraCert/Check.lean` (Lean core only), `YantraCert/Sound.lean`, `YantraCert/Cover.lean`: a branch-and-bound
+  checker for sign conditions of three-variable polynomials (`NP`, `SP`) on dyadic cells (`Cell`) of the unit cube,
+  evaluated by the kernel with natural numbers; soundness `SP.signMono_sound`, `checkTree_sound` and `Chart.good_of_root`.
+- `YantraCert/ZPoly.lean`, `YantraCert/ZPolySound.lean`: a sparse polynomial normaliser in three variables with integer
+  coefficients (`ZP`), with `ZP.eq_of_eqv`: an identity checked by the kernel holds at every real point.
+
+### How to import it
+
+The library builds with `leanprover/lean4:v4.35.0-rc2` and Mathlib `v4.35.0-rc2`; a project that requires it should use
+the same toolchain and Mathlib. In `lakefile.toml`:
+
+```toml
+[[require]]
+name = "KulaichevYantra"
+git = "https://github.com/DICTOR-Master/kulaichev-yantra-lean.git"
+rev = "c167cf4ed81f9e7df921ed7ce0113db874b1391b"
+```
+
+Then import the modules you need, for example:
+
+```lean
+import YantraCert.Krawczyk
+import YantraCert.Main
+```
+
+### Licence
+
+The Lean code: Apache-2.0 (see `LICENSE`). Copyright 2026 DICTO. The paper #103: CC BY-SA 4.0.
 
 ## Other work by DICTO
 

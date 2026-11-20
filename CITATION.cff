@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this library, please cite the paper below and the repository commit you used."
+type: software
+title: "Kulaichev's Śrī Yantra is unique (Lean 4 + Mathlib)"
+authors:
+  - name: "DICTO"
+    orcid: "https://orcid.org/0009-0001-2620-2036"
+repository-code: "https://github.com/DICTOR-Master/kulaichev-yantra-lean"
+license: Apache-2.0
+preferred-citation:
+  type: article
+  status: preprint
+  title: "The DICTO Yantra: Unique and Traditional, Exact but Not Constructible"
+  authors:
+    - name: "DICTO"
+      orcid: "https://orcid.org/0009-0001-2620-2036"
+  year: 2026
+  publisher:
+    name: "Zenodo"
+  doi: "10.5281/zenodo.24052633"
+  url: "https://doi.org/10.5281/zenodo.24052633"
