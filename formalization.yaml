@@ -27,10 +27,14 @@ project:
     geometry (the construction of the Sri Yantra), and computer-assisted proof in
     geometry (a certified interval computation checked by Lean's kernel).
   authors:
-    - "DICTO"
+    - name: "DICTO"
+      orcid: "0009-0001-2620-2036"
+      github: "DICTOR-Master"
   license: "Apache-2.0"
   responsible_maintainers:
-    - "DICTO"
+    - name: "DICTO"
+      orcid: "0009-0001-2620-2036"
+      github: "DICTOR-Master"
 
 classification:
   arxiv: ["math.MG", "math.HO"]
@@ -39,7 +43,8 @@ classification:
 sources:
   - title: "The DICTO Yantra: Two Exact Solutions (paper #103; Theorem 1 admissibility, Theorem 10 Kulaichev's yantra)"
     authors:
-      - "DICTO"
+      - name: "DICTO"
+        orcid: "0009-0001-2620-2036"
     id: "doi:10.5281/zenodo.24052633"
     type: "paper"
     location: "https://doi.org/10.5281/zenodo.24052633 (concept DOI, all versions)"
@@ -51,7 +56,8 @@ sources:
     author_endorsement: "participated"
   - title: "Uniqueness of Kulaichev's Sri Yantra (DICTO's study 2026-11-15: elimination census and box certificate)"
     authors:
-      - "DICTO"
+      - name: "DICTO"
+        orcid: "0009-0001-2620-2036"
     type: "other"
     location: "this repository (README.md)"
     relationship: "other"
